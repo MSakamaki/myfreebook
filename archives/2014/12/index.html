@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014/12 | Hexo</title>
+  <title>Archives: 2014/12 | My Free Book</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/myfreebook/archives/2014/12/">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:title" content="My Free Book">
+<meta property="og:url" content="https://github.com/MSakamaki/myfreebook/archives/2014/12/">
+<meta property="og:site_name" content="My Free Book">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="My Free Book">
 <meta name="twitter:description">
 
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="My Free Book" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -35,8 +35,12 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/myfreebook/" id="logo">Hexo</a>
+        <a href="/myfreebook/" id="logo">My Free Book</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/myfreebook/" id="subtitle">Sakamaki&#39;s Memo pad</a>
+        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -55,13 +59,86 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:https://github.com/MSakamaki"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-use-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myfreebook/2014/12/08/use-hexo/" class="article-date">
+  <time datetime="2014-12-07T21:33:16.000Z" itemprop="datePublished">Dec 8 2014</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myfreebook/2014/12/08/use-hexo/">hexoを使ってみる</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HEXO"><a href="http://hexo.io/" target="_blank" rel="external">HEXO</a></h2>
+<p>ライトなWebメモ的なのを探していたら、面白そうな物を見つけたので使ってみる。</p>
+<img src="/myfreebook/2014/12/08/use-hexo/002.png" class="center" width="500">
+
+
+<p>NodeJSベースのBlog生成ツールのようで、<a href="http://jekyllrb.com/" target="_blank" rel="external">jekyll</a>のような物らしい。</p>
+<p>ちょっと前まではjekyllでやっていたが、最近NodeJSとJavaScriptにハマっているのでこちらを試してみようと思う。</p>
+<h3 id="とりあえずインストール">とりあえずインストール</h3>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g</div></pre></td></tr></table></figure>
+
+<p>NodeJSとGitが入っていればこれだけでインストールできる。</p>
+<h3 id="とりあえずページ作成">とりあえずページ作成</h3>
+<p>最初にやる事はこれ</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init hogeBlog</div></pre></td></tr></table></figure>
+
+<p>上のコマンドを実行する事で、ブログの雛形が出来る。</p>
+<p>あとは、出来上がったディレクトリに移動してnpmモジュールをインストール</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> hogeBlog</div><div class="line"></div><div class="line">npm install</div></pre></td></tr></table></figure>
+
+<p>次のコマンドを叩くとローカルサーバーが立ち上がる。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
+
+<p>その後、<code>http://localhost:4000/</code> とかにアクセスすると最初に出来上がっている雛形ページが見えるようになる。</p>
+<img src="/myfreebook/2014/12/08/use-hexo/001.png" class="center" width="500">
+
+
+<h3 id="画像の追加できるように設定する">画像の追加できるように設定する</h3>
+<p><code>post_asset_folder: false</code>となっているので<code>post_asset_folder: true</code>に設定する、これで次から作れる新規投稿毎にリソースを管理できるようになる。</p>
+<p>画像を指定する場合は以下のような専用のタグを使うと指定すると画像が見えるようになる、</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">{％ img center <span class="regexp">/myfreebook/</span><span class="number">2014</span><span class="regexp">/12/</span><span class="number">08</span><span class="regexp">/use-hexo/</span><span class="number">002</span>.png <span class="number">500</span> ％}</div></pre></td></tr></table></figure>
+
+<p>別段マークダウン指定でも問題ない。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="link_label">image</span>](<span class="link_url">/myfreebook/2014/12/08/use-hexo/002.png</span>)</div></pre></td></tr></table></figure>
+
+<h3 id="リポジトリ作成">リポジトリ作成</h3>
+<p>github pagesでも公開できるようなので、リポジトリを作り<code>_config.yml</code>の<code>deploy:</code>に自分のgithubの設定を加える。</p>
+<h3 id="ページ公開">ページ公開</h3>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://github.com/MSakamaki/2014/12/08/use-hexo/" data-id="pf14b675aohcoeom" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -107,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2014/12/05/hello-world/" data-id="t16djgwwztd65pi8" class="article-share-link">Share</a>
+      <a data-url="https://github.com/MSakamaki/2014/12/05/hello-world/" data-id="zhcg6sfsymjzc7wb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -132,7 +209,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -142,6 +219,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/myfreebook/2014/12/08/use-hexo/">hexoを使ってみる</a>
+          </li>
         
           <li>
             <a href="/myfreebook/2014/12/05/hello-world/">Hello World</a>
@@ -159,7 +240,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2014 John Doe<br>
+      &copy; 2014 MSakamaki<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
