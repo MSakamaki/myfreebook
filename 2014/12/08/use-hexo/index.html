@@ -18,7 +18,7 @@ NodeJSベースのBlog生成ツールのようで、jekyllのような物らし�
 NodeJSとGitが入っ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexoを使ってみる">
-<meta property="og:url" content="https://github.com/MSakamaki/myfreebook/2014/12/08/use-hexo/">
+<meta property="og:url" content="http://msakamaki.github.io/myfreebook/2014/12/08/use-hexo/">
 <meta property="og:site_name" content="My Free Book">
 <meta property="og:description" content="HEXO
 ライトなWebメモ的なのを探していたら、面白そうな物を見つけたので使ってみる。
@@ -33,6 +33,7 @@ NodeJSベースのBlog生成ツールのようで、jekyllのような物らし�
 NodeJSとGitが入っ">
 <meta property="og:image" content="/myfreebook/2014/12/08/use-hexo/002.png">
 <meta property="og:image" content="/myfreebook/2014/12/08/use-hexo/001.png">
+<meta property="og:image" content="/myfreebook/2014/12/08/use-hexo/003.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexoを使ってみる">
 <meta name="twitter:description" content="HEXO
@@ -91,7 +92,7 @@ NodeJSとGitが入っ">
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:https://github.com/MSakamaki"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://msakamaki.github.io"></form>
       </div>
     </div>
   </div>
@@ -155,12 +156,23 @@ NodeJSとGitが入っ">
 
 <h3 id="リポジトリ作成">リポジトリ作成</h3>
 <p>github pagesでも公開できるようなので、リポジトリを作り<code>_config.yml</code>の<code>deploy:</code>に自分のgithubの設定を加える。</p>
+<p>詳しくは<a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">hexoの設定ページ参照</a></p>
 <h3 id="ページ公開">ページ公開</h3>
+<p>ここまでの設定が巧く言っていれば、deployコマンドで公開できる。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">hexo</span> deploy</div></pre></td></tr></table></figure>
+
+<img src="/myfreebook/2014/12/08/use-hexo/003.png" class="center" width="500">
+
+<h3 id="最後に">最後に</h3>
+<p>画像の登録が多少面倒な事をのぞけば、普通に使いやすい。</p>
+<p>作業記録兼、メモ帳にしつつ、テンプレート部分を色々弄って行きたい。</p>
+<p>個人的にはマークダウンでドキュメントを書けるというのがとても楽だというだけなので、はてぶだろうがキータだろうがjekyllだろうがなんでもいいのだけれども</p>
+<p>ヘッダ部分の機能が完全に死んでる(RSSとかサイト内部検索とか)ので、ここをまずどうにかしないと。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://github.com/MSakamaki/2014/12/08/use-hexo/" data-id="pf14b675aohcoeom" class="article-share-link">Share</a>
+      <a data-url="http://msakamaki.github.io/2014/12/08/use-hexo/" data-id="ck8l9krtx8zqjku9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -168,6 +180,15 @@ NodeJSとGitが入っ">
   
     
 <nav id="article-nav">
+  
+    <a href="/myfreebook/2014/12/25/20141225/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          最近気になったOSS UIまとめ
+        
+      </div>
+    </a>
   
   
     <a href="/myfreebook/2014/12/05/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -194,7 +215,7 @@ NodeJSとGitが入っ">
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -204,6 +225,10 @@ NodeJSとGitが入っ">
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/myfreebook/2014/12/25/20141225/">最近気になったOSS UIまとめ</a>
+          </li>
         
           <li>
             <a href="/myfreebook/2014/12/08/use-hexo/">hexoを使ってみる</a>

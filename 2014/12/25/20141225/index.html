@@ -3,17 +3,37 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | My Free Book</title>
+  <title>最近気になったOSS UIまとめ | My Free Book</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="My Free Book">
-<meta property="og:url" content="http://msakamaki.github.io/myfreebook/archives/">
+  <meta name="description" content="handsontable
+ExcelライクなUIを提供するライブラリ
+範囲選択、右︎クリックとかできて割と便利。
+
+
+使い方
+123456789101112131415161718192021&lt;script src='//cdnjs.cloudflare.com/ajax/libs/handsontable/0.12.2/handsontable.full.min.js'&gt;&lt;/s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最近気になったOSS UIまとめ">
+<meta property="og:url" content="http://msakamaki.github.io/myfreebook/2014/12/25/20141225/">
 <meta property="og:site_name" content="My Free Book">
-<meta property="og:description">
+<meta property="og:description" content="handsontable
+ExcelライクなUIを提供するライブラリ
+範囲選択、右︎クリックとかできて割と便利。
+
+
+使い方
+123456789101112131415161718192021&lt;script src='//cdnjs.cloudflare.com/ajax/libs/handsontable/0.12.2/handsontable.full.min.js'&gt;&lt;/s">
+<meta property="og:image" content="/myfreebook/2014/12/25/20141225/handsontable.png">
+<meta property="og:image" content="/myfreebook/2014/12/25/20141225/wysihtml.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Free Book">
-<meta name="twitter:description">
+<meta name="twitter:title" content="最近気になったOSS UIまとめ">
+<meta name="twitter:description" content="handsontable
+ExcelライクなUIを提供するライブラリ
+範囲選択、右︎クリックとかできて割と便利。
+
+
+使い方
+123456789101112131415161718192021&lt;script src='//cdnjs.cloudflare.com/ajax/libs/handsontable/0.12.2/handsontable.full.min.js'&gt;&lt;/s">
 
   
     <link rel="alternative" href="/atom.xml" title="My Free Book" type="application/atom+xml">
@@ -65,9 +85,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-20141225" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-20141225" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/myfreebook/2014/12/25/20141225/" class="article-date">
   <time datetime="2014-12-25T01:12:06.000Z" itemprop="datePublished">Dec 25 2014</time>
@@ -80,8 +98,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/myfreebook/2014/12/25/20141225/">最近気になったOSS UIまとめ</a>
+    <h1 class="article-title" itemprop="name">
+      最近気になったOSS UIまとめ
     </h1>
   
 
@@ -132,149 +150,20 @@ var sortable = Sortable.create(el);
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-use-hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/myfreebook/2014/12/08/use-hexo/" class="article-date">
-  <time datetime="2014-12-07T21:33:16.000Z" itemprop="datePublished">Dec 8 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/myfreebook/2014/12/08/use-hexo/">hexoを使ってみる</a>
-    </h1>
+    <a href="/myfreebook/2014/12/08/use-hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexoを使ってみる</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HEXO"><a href="http://hexo.io/" target="_blank" rel="external">HEXO</a></h2>
-<p>ライトなWebメモ的なのを探していたら、面白そうな物を見つけたので使ってみる。</p>
-<img src="/myfreebook/2014/12/08/use-hexo/002.png" class="center" width="500">
-
-
-<p>NodeJSベースのBlog生成ツールのようで、<a href="http://jekyllrb.com/" target="_blank" rel="external">jekyll</a>のような物らしい。</p>
-<p>ちょっと前まではjekyllでやっていたが、最近NodeJSとJavaScriptにハマっているのでこちらを試してみようと思う。</p>
-<h3 id="とりあえずインストール">とりあえずインストール</h3>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g</div></pre></td></tr></table></figure>
-
-<p>NodeJSとGitが入っていればこれだけでインストールできる。</p>
-<h3 id="とりあえずページ作成">とりあえずページ作成</h3>
-<p>最初にやる事はこれ</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init hogeBlog</div></pre></td></tr></table></figure>
-
-<p>上のコマンドを実行する事で、ブログの雛形が出来る。</p>
-<p>あとは、出来上がったディレクトリに移動してnpmモジュールをインストール</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> hogeBlog</div><div class="line"></div><div class="line">npm install</div></pre></td></tr></table></figure>
-
-<p>次のコマンドを叩くとローカルサーバーが立ち上がる。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
-
-<p>その後、<code>http://localhost:4000/</code> とかにアクセスすると最初に出来上がっている雛形ページが見えるようになる。</p>
-<img src="/myfreebook/2014/12/08/use-hexo/001.png" class="center" width="500">
-
-
-<h3 id="画像の追加できるように設定する">画像の追加できるように設定する</h3>
-<p><code>post_asset_folder: false</code>となっているので<code>post_asset_folder: true</code>に設定する、これで次から作れる新規投稿毎にリソースを管理できるようになる。</p>
-<p>画像を指定する場合は以下のような専用のタグを使うと指定すると画像が見えるようになる、</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">{％ img center <span class="regexp">/myfreebook/</span><span class="number">2014</span><span class="regexp">/12/</span><span class="number">08</span><span class="regexp">/use-hexo/</span><span class="number">002</span>.png <span class="number">500</span> ％}</div></pre></td></tr></table></figure>
-
-<p>別段マークダウン指定でも問題ない。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="link_label">image</span>](<span class="link_url">/myfreebook/2014/12/08/use-hexo/002.png</span>)</div></pre></td></tr></table></figure>
-
-<h3 id="リポジトリ作成">リポジトリ作成</h3>
-<p>github pagesでも公開できるようなので、リポジトリを作り<code>_config.yml</code>の<code>deploy:</code>に自分のgithubの設定を加える。</p>
-<p>詳しくは<a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">hexoの設定ページ参照</a></p>
-<h3 id="ページ公開">ページ公開</h3>
-<p>ここまでの設定が巧く言っていれば、deployコマンドで公開できる。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">hexo</span> deploy</div></pre></td></tr></table></figure>
-
-<img src="/myfreebook/2014/12/08/use-hexo/003.png" class="center" width="500">
-
-<h3 id="最後に">最後に</h3>
-<p>画像の登録が多少面倒な事をのぞけば、普通に使いやすい。</p>
-<p>作業記録兼、メモ帳にしつつ、テンプレート部分を色々弄って行きたい。</p>
-<p>個人的にはマークダウンでドキュメントを書けるというのがとても楽だというだけなので、はてぶだろうがキータだろうがjekyllだろうがなんでもいいのだけれども</p>
-<p>ヘッダ部分の機能が完全に死んでる(RSSとかサイト内部検索とか)ので、ここをまずどうにかしないと。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2014/12/08/use-hexo/" data-id="ck8l9krtx8zqjku9" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/myfreebook/2014/12/05/hello-world/" class="article-date">
-  <time datetime="2014-12-05T07:54:28.000Z" itemprop="datePublished">Dec 5 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myfreebook/2014/12/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2014/12/05/hello-world/" data-id="jl60i36edxk9abk8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
 </section>
         
           <aside id="sidebar">
