@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives: 2015 | My Free Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="My Free Book">
+<meta property="og:url" content="http://msakamaki.github.io/myfreebook/archives/2015/">
+<meta property="og:site_name" content="My Free Book">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="My Free Book">
+<meta name="twitter:description">
+
+  
+    <link rel="alternative" href="/atom.xml" title="My Free Book" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/myfreebook/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/myfreebook/" id="logo">My Free Book</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/myfreebook/" id="subtitle">Sakamaki&#39;s Memo pad</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/myfreebook/">Home</a>
+        
+          <a class="main-nav-link" href="/myfreebook/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://msakamaki.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-mermaid" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myfreebook/2015/01/06/mermaid/" class="article-date">
+  <time datetime="2015-01-06T05:17:59.000Z" itemprop="datePublished">Jan 6 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myfreebook/2015/01/06/mermaid/">hexoにmeamaidを組み込んでみるテスト</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近<a href="https://github.com/knsv/mermaid" target="_blank" rel="external">meamaid</a>での図形作成にはまってる。</p>
+<p>で、hexoオリジナルテーマにmeamaidを組み込んだけれど、単純に組み込んだだけだと動作しなかったのでメモ。</p>
+<h4 id="動かなかった原因">動かなかった原因</h4>
+<ul>
+<li><code>&lt;br&gt;</code>タグとか混ざる</li>
+<li><code>--</code>が<code>-</code>に変換される。</li>
+</ul>
+<h4 id="javascriptから突っ込んでみるとできる。">javascriptから突っ込んでみるとできる。</h4>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"drowmmd"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'drowmmd'</span>).innerHTML </div><div class="line">    = <span class="string">'&lt;div class="mermaid"&gt; graph TD; A--&gt;B; A--&gt;C; B--&gt;D; C--&gt;D; &lt;/div&gt;'</span></div><div class="line">  })();</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>で、以下のようにちゃんと変換されて表示される。</p>
+<p><div id="drowmmd"></div></p>
+<script>
+  (function(){
+    document.getElementById('drowmmd').innerHTML = '<div class="mermaid"> graph TD; A-->B; A-->C; B-->D; C-->D; </div>'
+  })();
+</script>
+
+<p>けれども個人的には、mermaid構文のようにもう少し簡単に書きたい。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"mermaid"</span>&gt;</div><div class="line"> graph TD;</div><div class="line">   A<span class="comment">--&gt;B;</span></div><div class="line">   A<span class="comment">--&gt;C;</span></div><div class="line">   B<span class="comment">--&gt;D;</span></div><div class="line">   C<span class="comment">--&gt;D;</span></div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
+
+<p>ので、カスタムmarkdown機能を組み込んでみる。</p>
+<p><a href="https://github.com/akfish/hexo-renderer-marked-plus" target="_blank" rel="external">hexo-renderer-marked-plus</a> でMarkdownの内容をオーバライドできるようなので、ひとまずHexoにinstallする。</p>
+<ul>
+<li>hexoフォルダに以下を実行</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-renderer-marked-plus --save</div></pre></td></tr></table></figure>
+
+<p>で、<code>themes/自分のテーマ/scripts/markedrenderer.js</code>に以下のコードを追加して、独自解釈をできるように。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> marmaid ={</div><div class="line">  inline: <span class="regexp">/^mermaid\n/</span></div><div class="line">};</div><div class="line"></div><div class="line">hexo.markedRenderer = {</div><div class="line">  codespan: <span class="function"><span class="keyword">function</span><span class="params">(code)</span> </span>{</div><div class="line">    <span class="keyword">if</span> (marmaid.inline.test(code)) {</div><div class="line">      <span class="keyword">return</span> <span class="string">'&lt;div class="mermaid"&gt;'</span> + code.replace(marmaid.inline,<span class="string">''</span>) + <span class="string">'&lt;/div&gt;'</span></div><div class="line">    }</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._super.codespan(code);</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>これで以下のように書くと。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">`mermaid</span></div><div class="line"> <span class="comment">graph</span> <span class="comment">TD;</span></div><div class="line">   <span class="comment">A</span><span class="literal">-</span><span class="literal">-</span>&gt;<span class="comment">B;</span></div><div class="line">   <span class="comment">A</span><span class="literal">-</span><span class="literal">-</span>&gt;<span class="comment">C;</span></div><div class="line">   <span class="comment">B</span><span class="literal">-</span><span class="literal">-</span>&gt;<span class="comment">D;</span></div><div class="line">   <span class="comment">C</span><span class="literal">-</span><span class="literal">-</span>&gt;<span class="comment">D;</span></div><div class="line"><span class="comment">`</span></div></pre></td></tr></table></figure>
+
+<p>下のようにhexo上でmermaidが書けるようになる。</p>
+<p><div class="mermaid"> graph TD;
+   A--&gt;B;
+   A--&gt;C;
+   B--&gt;D;
+   C--&gt;D;</div></p>
+<p>mermaid自体、最近シーケンス図書けるようになったりしてるので、今のうちにくみこんでみたけれど<br>merkdownライクにフローチャートやシーケンスが書けるのは凄い良い気がする。</p>
+<p><div class="mermaid">sequenceDiagram
+    Hexo-&gt;&gt;Mermaid: Covert?
+    Hexo--&gt;Mermaid: Drow!</div></p>
+<p>次回調べたいもの</p>
+<ul>
+<li><a href="https://github.com/mgechev/angular-webrtc" target="_blank" rel="external">Angular WebRTC</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://msakamaki.github.io/2015/01/06/mermaid/" data-id="4yuiwa3b689x579m" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/myfreebook/2015/01/06/mermaid/">hexoにmeamaidを組み込んでみるテスト</a>
+          </li>
+        
+          <li>
+            <a href="/myfreebook/2014/12/25/20141225/">最近気になったOSS UIまとめ</a>
+          </li>
+        
+          <li>
+            <a href="/myfreebook/2014/12/08/use-hexo/">hexoを使ってみる</a>
+          </li>
+        
+          <li>
+            <a href="/myfreebook/2014/12/05/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 MSakamaki<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/myfreebook/" class="mobile-nav-link">Home</a>
+  
+    <a href="/myfreebook/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/myfreebook/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/myfreebook/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/myfreebook/mermaid/mermaid.full.min.js" type="text/javascript"></script>
+
+
+<script src="/myfreebook/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
