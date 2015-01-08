@@ -3,17 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | My Free Book</title>
+  <title>Multi-User Video Conference with WebRTCの意訳 | My Free Book</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="My Free Book">
-<meta property="og:url" content="http://msakamaki.github.io/myfreebook/archives/">
+  <meta name="description" content="WebRTCの教材として凄く良さそうだったので、Angular WebRTCについて、Blogのざっくり訳をしてみた。
+
+これはWebRTCとAngularJS、Yeomanで複数人で会議するためのビデオ会議アプリを作る為のチュートリアルです。
+このチュートリアルは、WebRTCのピアツーピア接続の方法と、ICE (Interactive-Connectivity Establishment) f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Multi-User Video Conference with WebRTCの意訳">
+<meta property="og:url" content="http://msakamaki.github.io/myfreebook/2015/01/08/angularwebrtc/">
 <meta property="og:site_name" content="My Free Book">
-<meta property="og:description">
+<meta property="og:description" content="WebRTCの教材として凄く良さそうだったので、Angular WebRTCについて、Blogのざっくり訳をしてみた。
+
+これはWebRTCとAngularJS、Yeomanで複数人で会議するためのビデオ会議アプリを作る為のチュートリアルです。
+このチュートリアルは、WebRTCのピアツーピア接続の方法と、ICE (Interactive-Connectivity Establishment) f">
+<meta property="og:image" content="/myfreebook/2015/01/08/angularwebrtc/webrtc-yeoman.png">
+<meta property="og:image" content="/myfreebook/2015/01/08/angularwebrtc/setup.png">
+<meta property="og:image" content="/myfreebook/2015/01/08/angularwebrtc/webcam-permissions.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Free Book">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Multi-User Video Conference with WebRTCの意訳">
+<meta name="twitter:description" content="WebRTCの教材として凄く良さそうだったので、Angular WebRTCについて、Blogのざっくり訳をしてみた。
+
+これはWebRTCとAngularJS、Yeomanで複数人で会議するためのビデオ会議アプリを作る為のチュートリアルです。
+このチュートリアルは、WebRTCのピアツーピア接続の方法と、ICE (Interactive-Connectivity Establishment) f">
 
   
     <link rel="alternative" href="/atom.xml" title="My Free Book" type="application/atom+xml">
@@ -65,9 +77,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-angularwebrtc" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-angularwebrtc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/myfreebook/2015/01/08/angularwebrtc/" class="article-date">
   <time datetime="2015-01-08T11:12:08.000Z" itemprop="datePublished">Jan 8 2015</time>
@@ -80,8 +90,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/myfreebook/2015/01/08/angularwebrtc/">Multi-User Video Conference with WebRTCの意訳</a>
+    <h1 class="article-title" itemprop="name">
+      Multi-User Video Conference with WebRTCの意訳
     </h1>
   
 
@@ -434,302 +444,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-mermaid" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/myfreebook/2015/01/06/mermaid/" class="article-date">
-  <time datetime="2015-01-06T05:17:59.000Z" itemprop="datePublished">Jan 6 2015</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/myfreebook/2015/01/06/mermaid/">hexoにmeamaidを組み込んでみるテスト</a>
-    </h1>
+    <a href="/myfreebook/2015/01/06/mermaid/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexoにmeamaidを組み込んでみるテスト</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近<a href="https://github.com/knsv/mermaid" target="_blank" rel="external">meamaid</a>での図形作成にはまってる。</p>
-<p>で、hexoオリジナルテーマにmeamaidを組み込んだけれど、単純に組み込んだだけだと動作しなかったのでメモ。</p>
-<h4 id="動かなかった原因">動かなかった原因</h4>
-<ul>
-<li><code>&lt;br&gt;</code>タグとか混ざる</li>
-<li><code>--</code>が<code>-</code>に変換される。</li>
-</ul>
-<h4 id="javascriptから突っ込んでみるとできる。">javascriptから突っ込んでみるとできる。</h4>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"drowmmd"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  (<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">'drowmmd'</span>).innerHTML </div><div class="line">    = <span class="string">'&lt;div class="mermaid"&gt; graph TD; A--&gt;B; A--&gt;C; B--&gt;D; C--&gt;D; &lt;/div&gt;'</span></div><div class="line">  })();</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<p>で、以下のようにちゃんと変換されて表示される。</p>
-<p><div id="drowmmd"></div></p>
-<script>
-  (function(){
-    document.getElementById('drowmmd').innerHTML = '<div class="mermaid"> graph TD; A-->B; A-->C; B-->D; C-->D; </div>'
-  })();
-</script>
-
-<p>けれども個人的には、mermaid構文のようにもう少し簡単に書きたい。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"mermaid"</span>&gt;</div><div class="line"> graph TD;</div><div class="line">   A<span class="comment">--&gt;B;</span></div><div class="line">   A<span class="comment">--&gt;C;</span></div><div class="line">   B<span class="comment">--&gt;D;</span></div><div class="line">   C<span class="comment">--&gt;D;</span></div><div class="line">&lt;/<span class="keyword">div</span>&gt;</div></pre></td></tr></table></figure>
-
-<p>ので、カスタムmarkdown機能を組み込んでみる。</p>
-<p><a href="https://github.com/akfish/hexo-renderer-marked-plus" target="_blank" rel="external">hexo-renderer-marked-plus</a> でMarkdownの内容をオーバライドできるようなので、ひとまずHexoにinstallする。</p>
-<ul>
-<li>hexoフォルダに以下を実行</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-renderer-marked-plus --save</div></pre></td></tr></table></figure>
-
-<p>で、<code>themes/自分のテーマ/scripts/markedrenderer.js</code>に以下のコードを追加して、独自解釈をできるように。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> marmaid ={</div><div class="line">  inline: <span class="regexp">/^mermaid\n/</span></div><div class="line">};</div><div class="line"></div><div class="line">hexo.markedRenderer = {</div><div class="line">  codespan: <span class="function"><span class="keyword">function</span><span class="params">(code)</span> </span>{</div><div class="line">    <span class="keyword">if</span> (marmaid.inline.test(code)) {</div><div class="line">      <span class="keyword">return</span> <span class="string">'&lt;div class="mermaid"&gt;'</span> + code.replace(marmaid.inline,<span class="string">''</span>) + <span class="string">'&lt;/div&gt;'</span></div><div class="line">    }</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._super.codespan(code);</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p>これで以下のように書くと。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">`mermaid</span></div><div class="line"> <span class="comment">graph</span> <span class="comment">TD;</span></div><div class="line">   <span class="comment">A</span><span class="literal">-</span><span class="literal">-</span>&gt;<span class="comment">B;</span></div><div class="line">   <span class="comment">A</span><span class="literal">-</span><span class="literal">-</span>&gt;<span class="comment">C;</span></div><div class="line">   <span class="comment">B</span><span class="literal">-</span><span class="literal">-</span>&gt;<span class="comment">D;</span></div><div class="line">   <span class="comment">C</span><span class="literal">-</span><span class="literal">-</span>&gt;<span class="comment">D;</span></div><div class="line"><span class="comment">`</span></div></pre></td></tr></table></figure>
-
-<p>下のようにhexo上でmermaidが書けるようになる。</p>
-<p><div class="mermaid"> graph TD;
-   A--&gt;B;
-   A--&gt;C;
-   B--&gt;D;
-   C--&gt;D;</div></p>
-<p>mermaid自体、最近シーケンス図書けるようになったりしてるので、今のうちにくみこんでみたけれど<br>merkdownライクにフローチャートやシーケンスが書けるのは凄い良い気がする。</p>
-<p><div class="mermaid">sequenceDiagram
-    Hexo-&gt;&gt;Mermaid: Covert?
-    Hexo--&gt;Mermaid: Drow!</div></p>
-<p>次回調べたいもの</p>
-<ul>
-<li><a href="https://github.com/mgechev/angular-webrtc" target="_blank" rel="external">Angular WebRTC</a></li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2015/01/06/mermaid/" data-id="o17vn6dm24ournfs" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-20141225" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/myfreebook/2014/12/25/20141225/" class="article-date">
-  <time datetime="2014-12-25T01:12:06.000Z" itemprop="datePublished">Dec 25 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myfreebook/2014/12/25/20141225/">最近気になったOSS UIまとめ</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="handsontable"><a href="http://handsontable.com/" target="_blank" rel="external">handsontable</a></h2>
-<p>ExcelライクなUIを提供するライブラリ</p>
-<p>範囲選択、右︎クリックとかできて割と便利。</p>
-<img src="/myfreebook/2014/12/25/20141225/handsontable.png" class="center" width="300">
-
-<h4 id="使い方">使い方</h4>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//cdnjs.cloudflare.com/ajax/libs/handsontable/0.12.2/handsontable.full.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"example"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> data = [</div><div class="line">  [<span class="string">""</span>, <span class="string">"Maserati"</span>, <span class="string">"Mazda"</span>, <span class="string">"Mercedes"</span>, <span class="string">"Mini"</span>, <span class="string">"Mitsubishi"</span>],</div><div class="line">  [<span class="string">"2009"</span>, <span class="number">0</span>, <span class="number">2941</span>, <span class="number">4303</span>, <span class="number">354</span>, <span class="number">5814</span>],</div><div class="line">  [<span class="string">"2010"</span>, <span class="number">5</span>, <span class="number">2905</span>, <span class="number">2867</span>, <span class="number">412</span>, <span class="number">5284</span>],</div><div class="line">  [<span class="string">"2011"</span>, <span class="number">4</span>, <span class="number">2517</span>, <span class="number">4822</span>, <span class="number">552</span>, <span class="number">6127</span>],</div><div class="line">  [<span class="string">"2012"</span>, <span class="number">2</span>, <span class="number">2422</span>, <span class="number">5399</span>, <span class="number">776</span>, <span class="number">4151</span>]</div><div class="line">];</div><div class="line"></div><div class="line"><span class="keyword">var</span> container = <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>);</div><div class="line"><span class="keyword">var</span> hot = <span class="keyword">new</span> Handsontable(container,</div><div class="line">{</div><div class="line">  data: data,</div><div class="line">  minSpareRows: <span class="number">1</span>,</div><div class="line">  colHeaders: <span class="literal">true</span>,</div><div class="line">  contextMenu: <span class="literal">true</span></div><div class="line">});</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<h2 id="Sortable"><a href="http://rubaxa.github.io/Sortable/" target="_blank" rel="external">Sortable</a></h2>
-<p>非JQueryのドラッグ＆ドロップ操作を簡単に実現できるライブラリ</p>
-<p>使用方法は単純で、対象エレメントを<code>Sortable.create(エレメント)</code>するだけ。</p>
-<h3 id="ドラッグ＆ドロップできるlistサンプル">ドラッグ＆ドロップできるlistサンプル</h3>
-<script src="/myfreebook/2014/12/25/20141225/Sortable.js"></script>
-<div style="width: 150px">
-  <ul id="items">
-      <li>item 1</li>
-      <li>item 2</li>
-      <li>item 3</li>
-  </ul>
-</div>
-
-<script>
-var el = document.getElementById('items');
-var sortable = Sortable.create(el);
-</script>
-
-<h4 id="CODE">CODE</h4>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"bower_component/Sortable/Sortable.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">id</span>=<span class="value">"items"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>item 1<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>item 2<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">li</span>&gt;</span>item 3<span class="tag">&lt;/<span class="title">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">'items'</span>);</div><div class="line"><span class="keyword">var</span> sortable = Sortable.create(el);</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<h2 id="wysihtml"><a href="http://wysihtml.com/" target="_blank" rel="external">wysihtml</a></h2>
-<p>高機能なWeb Textエディタ。</p>
-<img src="/myfreebook/2014/12/25/20141225/wysihtml.png" class="center" width="500">
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2014/12/25/20141225/" data-id="l458khbp578vbt1i" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-use-hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/myfreebook/2014/12/08/use-hexo/" class="article-date">
-  <time datetime="2014-12-07T21:33:16.000Z" itemprop="datePublished">Dec 8 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myfreebook/2014/12/08/use-hexo/">hexoを使ってみる</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="HEXO"><a href="http://hexo.io/" target="_blank" rel="external">HEXO</a></h2>
-<p>ライトなWebメモ的なのを探していたら、面白そうな物を見つけたので使ってみる。</p>
-<img src="/myfreebook/2014/12/08/use-hexo/002.png" class="center" width="500">
-
-
-<p>NodeJSベースのBlog生成ツールのようで、<a href="http://jekyllrb.com/" target="_blank" rel="external">jekyll</a>のような物らしい。</p>
-<p>ちょっと前まではjekyllでやっていたが、最近NodeJSとJavaScriptにハマっているのでこちらを試してみようと思う。</p>
-<h3 id="とりあえずインストール">とりあえずインストール</h3>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g</div></pre></td></tr></table></figure>
-
-<p>NodeJSとGitが入っていればこれだけでインストールできる。</p>
-<h3 id="とりあえずページ作成">とりあえずページ作成</h3>
-<p>最初にやる事はこれ</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init hogeBlog</div></pre></td></tr></table></figure>
-
-<p>上のコマンドを実行する事で、ブログの雛形が出来る。</p>
-<p>あとは、出来上がったディレクトリに移動してnpmモジュールをインストール</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> hogeBlog</div><div class="line"></div><div class="line">npm install</div></pre></td></tr></table></figure>
-
-<p>次のコマンドを叩くとローカルサーバーが立ち上がる。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server</div></pre></td></tr></table></figure>
-
-<p>その後、<code>http://localhost:4000/</code> とかにアクセスすると最初に出来上がっている雛形ページが見えるようになる。</p>
-<img src="/myfreebook/2014/12/08/use-hexo/001.png" class="center" width="500">
-
-
-<h3 id="画像の追加できるように設定する">画像の追加できるように設定する</h3>
-<p><code>post_asset_folder: false</code>となっているので<code>post_asset_folder: true</code>に設定する、これで次から作れる新規投稿毎にリソースを管理できるようになる。</p>
-<p>画像を指定する場合は以下のような専用のタグを使うと指定すると画像が見えるようになる、</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">{％ img center <span class="regexp">/myfreebook/</span><span class="number">2014</span><span class="regexp">/12/</span><span class="number">08</span><span class="regexp">/use-hexo/</span><span class="number">002</span>.png <span class="number">500</span> ％}</div></pre></td></tr></table></figure>
-
-<p>別段マークダウン指定でも問題ない。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="link_label">image</span>](<span class="link_url">/myfreebook/2014/12/08/use-hexo/002.png</span>)</div></pre></td></tr></table></figure>
-
-<h3 id="リポジトリ作成">リポジトリ作成</h3>
-<p>github pagesでも公開できるようなので、リポジトリを作り<code>_config.yml</code>の<code>deploy:</code>に自分のgithubの設定を加える。</p>
-<p>詳しくは<a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">hexoの設定ページ参照</a></p>
-<h3 id="ページ公開">ページ公開</h3>
-<p>ここまでの設定が巧く言っていれば、deployコマンドで公開できる。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">hexo</span> deploy</div></pre></td></tr></table></figure>
-
-<img src="/myfreebook/2014/12/08/use-hexo/003.png" class="center" width="500">
-
-<h3 id="最後に">最後に</h3>
-<p>画像の登録が多少面倒な事をのぞけば、普通に使いやすい。</p>
-<p>作業記録兼、メモ帳にしつつ、テンプレート部分を色々弄って行きたい。</p>
-<p>個人的にはマークダウンでドキュメントを書けるというのがとても楽だというだけなので、はてぶだろうがキータだろうがjekyllだろうがなんでもいいのだけれども</p>
-<p>ヘッダ部分の機能が完全に死んでる(RSSとかサイト内部検索とか)ので、ここをまずどうにかしないと。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2014/12/08/use-hexo/" data-id="4vqdc1zivivozcno" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/myfreebook/2014/12/05/hello-world/" class="article-date">
-  <time datetime="2014-12-05T07:54:28.000Z" itemprop="datePublished">Dec 5 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/myfreebook/2014/12/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2014/12/05/hello-world/" data-id="d3nkcpesj4cvhamx" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
 </section>
         
           <aside id="sidebar">
