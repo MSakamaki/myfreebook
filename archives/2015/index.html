@@ -105,7 +105,6 @@
 <img src="/myfreebook/2015/01/08/angularwebrtc/webrtc-yeoman.png" class="center" width="500">
 
 <h2 id="WebRTC_イントロダクション">WebRTC イントロダクション</h2>
-<p>In my blog post <a href="http://blog.mgechev.com/2014/09/03/webrtc-peer-to-peer-chat-with-react/" target="_blank" rel="external">“WebRTC chat with React.js”</a> I already did a brief introduction about what WebRTC is and how it works:</p>
 <p>私のブログの記事の[“React.jsと、チャットWebRTC」]（<a href="http://blog.mgechev.com/2014/09/03/webrtc-peer-to-peer-chat-with-react/）で、私はすでにやったWebRTCがあり、それがどのように機能するかかについての簡単な紹介：" target="_blank" rel="external">http://blog.mgechev.com/2014/09/03/webrtc-peer-to-peer-chat-with-react/）で、私はすでにやったWebRTCがあり、それがどのように機能するかかについての簡単な紹介：</a></p>
 <p>私のBlog記事<a href="http://blog.mgechev.com/2014/09/03/webrtc-peer-to-peer-chat-with-react/" target="_blank" rel="external">“WebRTC chat with React.js”</a>で、既にWebRTCについて書いてあります。<br>WebRTCがどのように機能するかを簡単に紹介します。</p>
 <hr>
@@ -186,10 +185,11 @@
 <p>NATはネットワークアドレス変換(Network Address Translation.)の略です。<br>それはパブリックIPアドレスと、内部(プライベート)IPアドレスを変換する為の非常に一般的な手法です。<br>パブリックIPアドレスが限られた数しかないISPプロバイダの多くは、内部ネットワークにプライベートIPアドレスを使用して数を増やし、外部に対してはパブリックIPアドレスに変換する方法を使っています。<br>NATとNATの異なる種類似ついての詳細は<a href="https://en.wikipedia.org/wiki/Network_address_translation" target="_blank" rel="external">Wiki(英語)</a>にあります。</p>
 <p>特定のホスト端末がNATの背後にあるとき、それはパブリックIPアドレスを持ちません。<br>そのIPアドレスは<a href="https://en.wikipedia.org/wiki/Private_network" target="_blank" rel="external">192.168.0.102のように</a>なり済まします。<br>特定のホスト端末がネットワークにあるサービスに到達しようとする場合、ローカルネットワークの外部にはNATサーバーを介して要求を行います。<br>NATサーバーはNATサーバーのIPアドレスを送信元アドレスにに変換する事で、要求を自身にリダイレクトさせます。<br>NATはで変換されたアドレス(ローカルにある干すと端末のホスト名とポートと、NATのホスト名)に、送信元アドレス(ホスト名とポート)をマッピングするNATテーブルを作成します。<br>NATはリモートサービスによって応答を受信すると、要求の最初のソースを見つける為にNATテーブルを使用して、対応する応答をリダイレクトします。</p>
 <h5 id="STUN">STUN</h5>
-<p>Q： 何故STUNサーバーが必要で、それはいったい何なんですか？<br>A：これらの質問に答える 前に、「何故私たちはNATの背後が判らないか理解できますか？」と言う話ができます。</p>
-<p>NATの後ろに居る私たちがリモートサービスに到達したいと仮定します。</p>
-<p>まず、リモートサービスに要求を行った場合、リクエストの送信もとアドレスを持つサービスのレスポンスと、自分自身のマシンのアドレスを比較します。<br>その時にもしアドレスが異なる場合は、私たちがNATの背後に居る事が明らかです。<br>サービスが私たちのローカルネットワーク(s)の外に位置する必要がある事に注意してください。</p>
-<p>Q: 私たちはどのようにすれば確実に、サービスの応答内容から受信したアドレスと、上記のNATのひとつであるかを確認できますか？<br>A: 私たちにはできません、ネストされたNATの例では、いくつかのNATを経由した先かもしれないが、基本的にはICEのNATトラバーサル手順は同じです。</p>
+<p>Q： 何故STUNサーバーが必要で、それはいったい何なんですか？<br>A：これらの質問に答える 前に、「何故サーバーはアクセス者がNATの背後が判らないか理解できますか？」と言う話ができます。</p>
+<p>NATの後ろに居るユーザーがリモートサービスに到達したいと仮定します。</p>
+<p>まず、リモートサービスに要求を行った場合、リクエストの送信もとアドレスを持つサービスのレスポンスと、自分自身のマシンのアドレスを比較します。<br>その時にもしアドレスが異なる場合は、ユーザーはNATの背後に居る事が明らかです。</p>
+<p>この話の前提として、サービスがローカルネットワーク(s)の外に位置する必要がある事に注意してください。</p>
+<p>Q: Webアプリサーバーはどのようにすれば、サービスレスポンスから受信したアドレスと、上記のNATのひとつであるかを確認できますか？<br>A: Webアプリサーバーからは判断できません、ネストされたNATなどでは、いくつかのNATを経由した先かもしれないが、基本的にはICEのNATトラバーサル手順は同じです。</p>
 <p>では、リクエストの送信元アドレスを持つサービスのレスポンスで、STUNが何をするかです。</p>
 <p>私たちのNATのIPアドレスを持っているときは、私たちはリフレクションICE候補(reflexive ICE candidate)と呼ばれる新しいICE候補を使う事が出来ます。<br>これは、そのネットワークアドレス変換で使用されるNATサーバーの、IPアドレスとポートの組み合わせです。</p>
 <h2 id="実装">実装</h2>
@@ -428,7 +428,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2015/01/08/angularwebrtc/" data-id="ahrtxjjhxjg8c8s3" class="article-share-link">Share</a>
+      <a data-url="http://msakamaki.github.io/2015/01/08/angularwebrtc/" data-id="k8iakyvi7et81lvr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -512,7 +512,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2015/01/06/mermaid/" data-id="o17vn6dm24ournfs" class="article-share-link">Share</a>
+      <a data-url="http://msakamaki.github.io/2015/01/06/mermaid/" data-id="bxsfgqallivdaohz" class="article-share-link">Share</a>
       
       
     </footer>
