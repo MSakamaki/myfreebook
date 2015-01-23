@@ -27,3 +27,8 @@ hexo deploy
 
  * [その他コマンド](http://hexo.io/docs/commands.html)
 
+### 塩漬け
+
+[issuesに貼っとく](https://github.com/MSakamaki/myfreebook/issues)
+ 
+
