@@ -67,6 +67,100 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jspm" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myfreebook/2015/02/02/jspm/" class="article-date">
+  <time datetime="2015-02-02T08:00:25.000Z" itemprop="datePublished">Feb 2 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myfreebook/2015/02/02/jspm/">jspmを使ってみる</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><em>jspm ver 0.11.2のお話です</em></li>
+</ul>
+<h2 id="jspm"><a href="http://jspm.io/" target="_blank" rel="external">jspm</a></h2>
+<p>仕事で使うのはオールインワンなWebpackが手軽だっけど、ES6を意識したモジュール管理の学習＆慣れを目的にjspmを使い始めてみた。</p>
+<h2 id="jspm_をインストールする">jspm をインストールする</h2>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install jspm -g</div></pre></td></tr></table></figure>
+
+<h2 id="jspm_initで初期化する">jspm initで初期化する</h2>
+<p>コマンドは<code>jspm init</code>で<code>package.json</code>に<code>&quot;jspm&quot;</code>prefixが追加される（無ければ作られる）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ jspm init</div><div class="line"><span class="comment"># package.jsonが無いので作りますか？</span></div><div class="line">Package.json file does not exist, create it? [yes]: yes</div><div class="line"><span class="comment"># package.json のプレフィックスにjspmを含めますか？</span></div><div class="line">Would you like jspm to prefix the jspm package.json properties under jspm? [yes]: yes </div><div class="line"><span class="comment"># プロジェクト名は？</span></div><div class="line">Enter a name <span class="keyword">for</span> the project (optional): gulpjspm</div><div class="line"><span class="comment"># baseURLとして使うフォルダ名は？</span></div><div class="line">Enter baseURL (public folder) path [.]: client</div><div class="line"><span class="comment"># プロジェクトのコードをおさめるフォルダは？</span></div><div class="line"><span class="comment"># このフォルダにある物は.gitignoreに入れても良い、jspm installで復元される</span></div><div class="line">Enter project code folder [client/lib]: client/app   </div><div class="line"><span class="comment"># jspmでパッケージ管理されるフォルダは？</span></div><div class="line">Enter jspm packages folder [client/jspm_packages]: </div><div class="line"><span class="comment"># 設定ファイルを作りますか？</span></div><div class="line">Enter config file path [client/config.js]: </div><div class="line">Configuration file client/config.js doesn<span class="string">'t exist, create it? [yes]: </span></div><div class="line">ok   The gulpjspm/* path has been set to app/*.js.</div><div class="line">     To alter this path, set the directories.lib in the package.json or run jspm init -p to set the code folder.</div><div class="line"></div><div class="line"># ES6コンパイラはどちらを使いますか? Traceur または 6to5</div><div class="line">Which ES6 transpiler would you like to use, Traceur or 6to5? [traceur]:     </div><div class="line">ok   Verified package.json at package.json</div><div class="line">     Verified config file at client/config.js</div><div class="line">     Looking up loader files...</div><div class="line">       traceur-runtime.js</div></pre></td></tr></table></figure>
+
+<h2 id="チュートリアル">チュートリアル</h2>
+<p>個人的にチュートリアルでおおっと思った部分を。</p>
+<p><a href="https://github.com/jspm/jspm-cli/wiki/Getting-Started" target="_blank" rel="external">jspm構築マニュアル</a></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">jspm install npm:lodash-node</div><div class="line">jspm install github:components/jquery</div><div class="line">jspm install jquery</div><div class="line">jspm install myname=npm:underscore</div></pre></td></tr></table></figure>
+
+<p>の結果は以下のようなディレクトリ構成になる<br>ぱっと見た感じ<code>jspm install パッケージサブフォルダ:ライブラリ</code>という形っぽい</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">├── config.js</div><div class="line">├── jspm_packages</div><div class="line">│   ├── es6-module-loader.js</div><div class="line">│   ├── es6-module-loader.js.map</div><div class="line">│   ├── es6-module-loader.src.js</div><div class="line">│   ├── github</div><div class="line">│   │   ├── components</div><div class="line">│   │   │   ├── jquery@<span class="number">2.1</span>.<span class="number">3</span></div><div class="line">│   │   │   └── jquery@<span class="number">2.1</span>.<span class="number">3</span>.js</div><div class="line">│   │   └── jspm</div><div class="line">│   │       ├── nodelibs-process@<span class="number">0.1</span>.<span class="number">0</span></div><div class="line">│   │       └── nodelibs-process@<span class="number">0.1</span>.<span class="number">0</span>.js</div><div class="line">│   ├── npm</div><div class="line">│   │   ├── lodash-node@<span class="number">3.0</span>.<span class="number">1</span></div><div class="line">│   │   ├── lodash-node@<span class="number">3.0</span>.<span class="number">1</span>.js</div><div class="line">│   │   ├── process@<span class="number">0.10</span>.<span class="number">0</span></div><div class="line">│   │   ├── process@<span class="number">0.10</span>.<span class="number">0</span>.js</div><div class="line">│   │   ├── underscore@<span class="number">1.7</span>.<span class="number">0</span></div><div class="line">│   │   └── underscore@<span class="number">1.7</span>.<span class="number">0</span>.js</div><div class="line">│   ├── system.js</div><div class="line">│   ├── system.js.map</div><div class="line">│   ├── system.src.js</div><div class="line">│   ├── traceur-runtime.js</div><div class="line">│   ├── traceur-runtime.js.map</div><div class="line">│   ├── traceur-runtime.src.js</div><div class="line">│   ├── traceur.js</div><div class="line">│   ├── traceur.js.map</div><div class="line">│   └── traceur.src.js</div><div class="line">└── package.json</div></pre></td></tr></table></figure>
+
+<p><code>jspm_packages</code>フォルダにインストールされる、<code>bower_component</code>っぽい</p>
+<h2 id="パッケージ管理の仕組み">パッケージ管理の仕組み</h2>
+<ul>
+<li><a href="https://github.com/jspm/jspm-cli/wiki/Production-Workflows" target="_blank" rel="external">Workflows</a></li>
+<li><a href="https://github.com/jspm/jspm-cli/wiki/Installing" target="_blank" rel="external">jspm installマニュアル</a></li>
+</ul>
+<p>よく使うコマンドをとりあえずメモる。</p>
+<h3 id="結合">結合</h3>
+<p>以下のコマンドで関連するモジュールを結合する</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jspm bundle app/main build.js</div></pre></td></tr></table></figure>
+
+<h3 id="install">install</h3>
+<p>pconfig.jsに登録する</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jspm <span class="operator"><span class="keyword">install</span> パッケージ名</span></div></pre></td></tr></table></figure>
+
+<h3 id="inject">inject</h3>
+<p>JSライブラリを<code>jspm_packages</code>にダウンロードしつつ、<code>config.js</code>に設定する<br>下で紹介する<code>jspm setmode</code>を使う事で、リモート(CDN)/ローカルインストール参照を切り替えれる。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jspm inject パッケージ</div></pre></td></tr></table></figure>
+
+<h3 id="CDNの切り替え(リモート_or_ローカル)">CDNの切り替え(リモート or ローカル)</h3>
+<p>以下のコマンドで、リモート(githubリポジトリとか)参照するのか、ローカルの<code>jspm_packages</code>を参照するのかを切り替える事が出来る。</p>
+<p>CDNを参照する設定</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jspm setmode remote</div></pre></td></tr></table></figure>
+
+<p><code>jspm_packages</code>ローカルファイルを使う設定</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jspm setmode local</div></pre></td></tr></table></figure>
+
+<h3 id="インストール、注入されたパッケージの更新確認">インストール、注入されたパッケージの更新確認</h3>
+<p>jspmのパッケージを必要に応じて最新にする</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">jspm update</div></pre></td></tr></table></figure>
+
+<h2 id="とりあえず">とりあえず</h2>
+<p>パッケージ管理や最低限の開発タスクが入ったモダンな<code>bower</code>って感じがする。</p>
+<p>ちょっとプロトタイプで使ってみた感じ、モジュール管理や開発フロー全般がすごいシンプルになったのと、個人的に考えていたES6を意識したアプリの構築にぴったりで、思った以上に好きになれた。</p>
+<p>コンパクトで取り回しが良く、個人的にはbowerやWebpackよりも好きになれそう。</p>
+<p>調べているなかで、なるほどと思えた記事も紹介「<a href="https://gist.github.com/OliverJAsh/bcc676e381a06dbb3be0" target="_blank" rel="external">JSPMとWebpackの比較</a>」参考までに</p>
+<p>あと参考になった<a href="http://qiita.com/hrsh7th@github/items/0a225c46ba17196b9a55" target="_blank" rel="external">日本語の記事</a></p>
+<p>どっかで　jspmリファレンス翻訳＆査読会でもひらきたいな。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://msakamaki.github.io/2015/02/02/jspm/" data-id="2dz4jd5fyz8gss6n" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-angularwebrtc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/myfreebook/2015/01/08/angularwebrtc/" class="article-date">
@@ -428,7 +522,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2015/01/08/angularwebrtc/" data-id="k8iakyvi7et81lvr" class="article-share-link">Share</a>
+      <a data-url="http://msakamaki.github.io/2015/01/08/angularwebrtc/" data-id="zbyomc8g9anz9139" class="article-share-link">Share</a>
       
       
     </footer>
@@ -512,7 +606,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2015/01/06/mermaid/" data-id="bxsfgqallivdaohz" class="article-share-link">Share</a>
+      <a data-url="http://msakamaki.github.io/2015/01/06/mermaid/" data-id="r34fvw2mnurfnff3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -537,7 +631,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -547,6 +641,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/myfreebook/2015/02/02/jspm/">jspmを使ってみる</a>
+          </li>
         
           <li>
             <a href="/myfreebook/2015/01/08/angularwebrtc/">Multi-User Video Conference with WebRTCの意訳</a>
@@ -562,10 +660,6 @@
         
           <li>
             <a href="/myfreebook/2014/12/08/use-hexo/">hexoを使ってみる</a>
-          </li>
-        
-          <li>
-            <a href="/myfreebook/2014/12/05/hello-world/">Hello World</a>
           </li>
         
       </ul>
