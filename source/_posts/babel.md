@@ -58,4 +58,10 @@ babelをプロジェクトで使っていく誰もが、信じられないほど
 
 — The recently Babel team
 
-### 
+### 終わりに
+
+6to5を単なるES6 polyfillと考えていた自分が恥ずかしいと言う思いとともにこのBabelJSの持つ思想は凄い共感を覚えた。
+
+今後[ESTree](https://github.com/estree/estree)の動向に、目を離せない自分が居る。
+
+
