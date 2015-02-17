@@ -31,9 +31,9 @@ Enter a name for the project (optional): gulpjspm
 # baseURLとして使うフォルダ名は？
 Enter baseURL (public folder) path [.]: client
 # プロジェクトのコードをおさめるフォルダは？
-# このフォルダにある物は.gitignoreに入れても良い、jspm installで復元される
 Enter project code folder [client/lib]: client/app   
 # jspmでパッケージ管理されるフォルダは？
+# このフォルダにある物は.gitignoreに入れても良い、jspm installで復元される
 Enter jspm packages folder [client/jspm_packages]: 
 # 設定ファイルを作りますか？
 Enter config file path [client/config.js]: 
