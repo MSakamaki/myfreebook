@@ -121,7 +121,7 @@ jspm initで初期化する
 
 <h2 id="jspm_initで初期化する">jspm initで初期化する</h2>
 <p>コマンドは<code>jspm init</code>で<code>package.json</code>に<code>&quot;jspm&quot;</code>prefixが追加される（無ければ作られる）</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ jspm init</div><div class="line"><span class="comment"># package.jsonが無いので作りますか？</span></div><div class="line">Package.json file does not exist, create it? [yes]: yes</div><div class="line"><span class="comment"># package.json のプレフィックスにjspmを含めますか？</span></div><div class="line">Would you like jspm to prefix the jspm package.json properties under jspm? [yes]: yes </div><div class="line"><span class="comment"># プロジェクト名は？</span></div><div class="line">Enter a name <span class="keyword">for</span> the project (optional): gulpjspm</div><div class="line"><span class="comment"># baseURLとして使うフォルダ名は？</span></div><div class="line">Enter baseURL (public folder) path [.]: client</div><div class="line"><span class="comment"># プロジェクトのコードをおさめるフォルダは？</span></div><div class="line"><span class="comment"># このフォルダにある物は.gitignoreに入れても良い、jspm installで復元される</span></div><div class="line">Enter project code folder [client/lib]: client/app   </div><div class="line"><span class="comment"># jspmでパッケージ管理されるフォルダは？</span></div><div class="line">Enter jspm packages folder [client/jspm_packages]: </div><div class="line"><span class="comment"># 設定ファイルを作りますか？</span></div><div class="line">Enter config file path [client/config.js]: </div><div class="line">Configuration file client/config.js doesn<span class="string">'t exist, create it? [yes]: </span></div><div class="line">ok   The gulpjspm/* path has been set to app/*.js.</div><div class="line">     To alter this path, set the directories.lib in the package.json or run jspm init -p to set the code folder.</div><div class="line"></div><div class="line"># ES6コンパイラはどちらを使いますか? Traceur または 6to5</div><div class="line">Which ES6 transpiler would you like to use, Traceur or 6to5? [traceur]:     </div><div class="line">ok   Verified package.json at package.json</div><div class="line">     Verified config file at client/config.js</div><div class="line">     Looking up loader files...</div><div class="line">       traceur-runtime.js</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ jspm init</div><div class="line"><span class="comment"># package.jsonが無いので作りますか？</span></div><div class="line">Package.json file does not exist, create it? [yes]: yes</div><div class="line"><span class="comment"># package.json のプレフィックスにjspmを含めますか？</span></div><div class="line">Would you like jspm to prefix the jspm package.json properties under jspm? [yes]: yes </div><div class="line"><span class="comment"># プロジェクト名は？</span></div><div class="line">Enter a name <span class="keyword">for</span> the project (optional): gulpjspm</div><div class="line"><span class="comment"># baseURLとして使うフォルダ名は？</span></div><div class="line">Enter baseURL (public folder) path [.]: client</div><div class="line"><span class="comment"># プロジェクトのコードをおさめるフォルダは？</span></div><div class="line">Enter project code folder [client/lib]: client/app   </div><div class="line"><span class="comment"># jspmでパッケージ管理されるフォルダは？</span></div><div class="line"><span class="comment"># このフォルダにある物は.gitignoreに入れても良い、jspm installで復元される</span></div><div class="line">Enter jspm packages folder [client/jspm_packages]: </div><div class="line"><span class="comment"># 設定ファイルを作りますか？</span></div><div class="line">Enter config file path [client/config.js]: </div><div class="line">Configuration file client/config.js doesn<span class="string">'t exist, create it? [yes]: </span></div><div class="line">ok   The gulpjspm/* path has been set to app/*.js.</div><div class="line">     To alter this path, set the directories.lib in the package.json or run jspm init -p to set the code folder.</div><div class="line"></div><div class="line"># ES6コンパイラはどちらを使いますか? Traceur または 6to5</div><div class="line">Which ES6 transpiler would you like to use, Traceur or 6to5? [traceur]:     </div><div class="line">ok   Verified package.json at package.json</div><div class="line">     Verified config file at client/config.js</div><div class="line">     Looking up loader files...</div><div class="line">       traceur-runtime.js</div></pre></td></tr></table></figure>
 
 <h2 id="チュートリアル">チュートリアル</h2>
 <p>個人的にチュートリアルでおおっと思った部分を。</p>
@@ -173,7 +173,7 @@ jspm initで初期化する
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2015/02/02/jspm/" data-id="2dz4jd5fyz8gss6n" class="article-share-link">Share</a>
+      <a data-url="http://msakamaki.github.io/2015/02/02/jspm/" data-id="o7uvhpvw210q9gwt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,6 +181,15 @@ jspm initで初期化する
   
     
 <nav id="article-nav">
+  
+    <a href="/myfreebook/2015/02/17/babel/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          バベりバベられた日
+        
+      </div>
+    </a>
   
   
     <a href="/myfreebook/2015/01/08/angularwebrtc/" id="article-nav-older" class="article-nav-link-wrap">
@@ -207,7 +216,7 @@ jspm initで初期化する
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -217,6 +226,10 @@ jspm initで初期化する
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/myfreebook/2015/02/17/babel/">バベりバベられた日</a>
+          </li>
         
           <li>
             <a href="/myfreebook/2015/02/02/jspm/">jspmを使ってみる</a>
@@ -232,10 +245,6 @@ jspm initで初期化する
         
           <li>
             <a href="/myfreebook/2014/12/25/20141225/">最近気になったOSS UIまとめ</a>
-          </li>
-        
-          <li>
-            <a href="/myfreebook/2014/12/08/use-hexo/">hexoを使ってみる</a>
           </li>
         
       </ul>

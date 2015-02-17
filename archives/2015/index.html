@@ -67,6 +67,69 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-babel" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/myfreebook/2015/02/17/babel/" class="article-date">
+  <time datetime="2015-02-17T09:06:53.000Z" itemprop="datePublished">Feb 17 2015</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/myfreebook/2015/02/17/babel/">バベりバベられた日</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="BabelJs"><a href="https://babeljs.io/" target="_blank" rel="external">BabelJs</a></h1>
+<p>2015年２月１５日、<a href="https://atnd.org/events/61749" target="_blank" rel="external">Firefox OS WoTハッカソン</a>の懇親会で衝撃を受けた。</p>
+<p>ハッカソンとは全く関係ないんだけども、普段アプリを作るのに使っている6to5のブログで<a href="https://babeljs.io/blog/" target="_blank" rel="external">Not Born to Die</a>と言う記事が上げられた。</p>
+<h3 id="ざっくり約">ざっくり約</h3>
+<p>最新の情報として、6to5の行ったとても大きな事をブログに上げます。</p>
+<p>まだ目標には全く達していないが、6to5と6to5-coreは数日中に５０万ダウンロードを達成すると考えている。<br>そして、月末には百万をこえる回数になると予想している。</p>
+<p>その理由の大部分は、名前に起因していると考えています。<br>これまでの6to5は、名前のせいで本来の役割と異なった名前がJavaScriptコミュニティーにたいしてすこしばかりの混乱を与えていました。</p>
+<p>そもそも6to5は死ぬ為に生まれていません。</p>
+<p>次世代のJavaScriptはすべての環境でサポートされていても、6to5の入った作品はコミュニティーでも重要な役割を果たして行きます。</p>
+<p>ミニファイ、難読化、lint、コードカバレッジ計測、AltJSへのコンパイル、構文拡張、コードハイライトと様々ですが、殆どのプログラミング言語が依存する２つのツールがあります、それがparserやtranspilerです。</p>
+<p>JavaScriptにおけるこれらのツールの歴史は長く、悲しい道のりでした。<br>常に誰もが同じ物を再構築し、確かな混乱を作ってきました。<br>また、一つの新しい言語仕様を展開するまでにとても長い時間がかかりました。<br>（つまり「Arrow Functionsが大好きだが、そいつが我々のコードカバレッジ計測を破壊する」という話）</p>
+<p>幸いにも多くの作業は、この問題を改善するために行われています。</p>
+<p>Mozilla, Esprima, Jquery財団, Acorn, 6to5, ESLint等の人々が、最近になり<a href="https://github.com/estree/estree" target="_blank" rel="external">ESTree</a>を作成する為に集まっています。<br>これはすべてのparserとtranspilerツールの基盤かつ標準となるべき存在です。</p>
+<p>我々6to5はtranspilerのストーリーを解決していきたい。</p>
+<p>コミュニティーがここに集結して、多くの問題を共有し対処する事が出来れば、強固な基盤を作る事が出来るようになる筈です。</p>
+<p>これは馬鹿げた考えで、とても驕り高い目標かもしれません。</p>
+<p>そもそもは、「6to5」という名前じたいが、その目的の適用範囲外だと考えます。</p>
+<p>なので、我々はプロジェクトの名前を変更する事を良い考えだと思いました！</p>
+<p>6to5は今Babelという名前です。</p>
+<p>babelは常に最新の標準を使用する為のJavaScript transpilerとして役立ちつつけます。<br>それだけでなく、他のツールの為のにも様々なAPIを用意し始めます。</p>
+<p>babelをプロジェクトで使っていく誰もが、信じられないほど作業がしやすくなります。</p>
+<p>そして我々は、JavaScriptコミュニティーに大きな影響を与える事ができると信じ、驚くほどわくわくしています。</p>
+<p>だから、常にJavaScriptへの挑戦をし続ける。</p>
+<p>— The recently Babel team</p>
+<h3 id="終わりに">終わりに</h3>
+<p>6to5を単なるES6 polyfillと考えていた自分が恥ずかしいと言う思いとともにこのBabelJSの持つ思想は凄い共感を覚えた。</p>
+<p>今後<a href="https://github.com/estree/estree" target="_blank" rel="external">ESTree</a>の動向に、目を離せない自分が居る。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://msakamaki.github.io/2015/02/17/babel/" data-id="8pyo8qrp4w2jqhi0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-jspm" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/myfreebook/2015/02/02/jspm/" class="article-date">
@@ -99,7 +162,7 @@
 
 <h2 id="jspm_initで初期化する">jspm initで初期化する</h2>
 <p>コマンドは<code>jspm init</code>で<code>package.json</code>に<code>&quot;jspm&quot;</code>prefixが追加される（無ければ作られる）</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ jspm init</div><div class="line"><span class="comment"># package.jsonが無いので作りますか？</span></div><div class="line">Package.json file does not exist, create it? [yes]: yes</div><div class="line"><span class="comment"># package.json のプレフィックスにjspmを含めますか？</span></div><div class="line">Would you like jspm to prefix the jspm package.json properties under jspm? [yes]: yes </div><div class="line"><span class="comment"># プロジェクト名は？</span></div><div class="line">Enter a name <span class="keyword">for</span> the project (optional): gulpjspm</div><div class="line"><span class="comment"># baseURLとして使うフォルダ名は？</span></div><div class="line">Enter baseURL (public folder) path [.]: client</div><div class="line"><span class="comment"># プロジェクトのコードをおさめるフォルダは？</span></div><div class="line"><span class="comment"># このフォルダにある物は.gitignoreに入れても良い、jspm installで復元される</span></div><div class="line">Enter project code folder [client/lib]: client/app   </div><div class="line"><span class="comment"># jspmでパッケージ管理されるフォルダは？</span></div><div class="line">Enter jspm packages folder [client/jspm_packages]: </div><div class="line"><span class="comment"># 設定ファイルを作りますか？</span></div><div class="line">Enter config file path [client/config.js]: </div><div class="line">Configuration file client/config.js doesn<span class="string">'t exist, create it? [yes]: </span></div><div class="line">ok   The gulpjspm/* path has been set to app/*.js.</div><div class="line">     To alter this path, set the directories.lib in the package.json or run jspm init -p to set the code folder.</div><div class="line"></div><div class="line"># ES6コンパイラはどちらを使いますか? Traceur または 6to5</div><div class="line">Which ES6 transpiler would you like to use, Traceur or 6to5? [traceur]:     </div><div class="line">ok   Verified package.json at package.json</div><div class="line">     Verified config file at client/config.js</div><div class="line">     Looking up loader files...</div><div class="line">       traceur-runtime.js</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ jspm init</div><div class="line"><span class="comment"># package.jsonが無いので作りますか？</span></div><div class="line">Package.json file does not exist, create it? [yes]: yes</div><div class="line"><span class="comment"># package.json のプレフィックスにjspmを含めますか？</span></div><div class="line">Would you like jspm to prefix the jspm package.json properties under jspm? [yes]: yes </div><div class="line"><span class="comment"># プロジェクト名は？</span></div><div class="line">Enter a name <span class="keyword">for</span> the project (optional): gulpjspm</div><div class="line"><span class="comment"># baseURLとして使うフォルダ名は？</span></div><div class="line">Enter baseURL (public folder) path [.]: client</div><div class="line"><span class="comment"># プロジェクトのコードをおさめるフォルダは？</span></div><div class="line">Enter project code folder [client/lib]: client/app   </div><div class="line"><span class="comment"># jspmでパッケージ管理されるフォルダは？</span></div><div class="line"><span class="comment"># このフォルダにある物は.gitignoreに入れても良い、jspm installで復元される</span></div><div class="line">Enter jspm packages folder [client/jspm_packages]: </div><div class="line"><span class="comment"># 設定ファイルを作りますか？</span></div><div class="line">Enter config file path [client/config.js]: </div><div class="line">Configuration file client/config.js doesn<span class="string">'t exist, create it? [yes]: </span></div><div class="line">ok   The gulpjspm/* path has been set to app/*.js.</div><div class="line">     To alter this path, set the directories.lib in the package.json or run jspm init -p to set the code folder.</div><div class="line"></div><div class="line"># ES6コンパイラはどちらを使いますか? Traceur または 6to5</div><div class="line">Which ES6 transpiler would you like to use, Traceur or 6to5? [traceur]:     </div><div class="line">ok   Verified package.json at package.json</div><div class="line">     Verified config file at client/config.js</div><div class="line">     Looking up loader files...</div><div class="line">       traceur-runtime.js</div></pre></td></tr></table></figure>
 
 <h2 id="チュートリアル">チュートリアル</h2>
 <p>個人的にチュートリアルでおおっと思った部分を。</p>
@@ -151,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2015/02/02/jspm/" data-id="2dz4jd5fyz8gss6n" class="article-share-link">Share</a>
+      <a data-url="http://msakamaki.github.io/2015/02/02/jspm/" data-id="o7uvhpvw210q9gwt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -522,7 +585,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2015/01/08/angularwebrtc/" data-id="zbyomc8g9anz9139" class="article-share-link">Share</a>
+      <a data-url="http://msakamaki.github.io/2015/01/08/angularwebrtc/" data-id="pj7vv666rgey1j21" class="article-share-link">Share</a>
       
       
     </footer>
@@ -606,7 +669,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://msakamaki.github.io/2015/01/06/mermaid/" data-id="r34fvw2mnurfnff3" class="article-share-link">Share</a>
+      <a data-url="http://msakamaki.github.io/2015/01/06/mermaid/" data-id="r66mxw6nxra082t5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -631,7 +694,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/02/">February 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/myfreebook/archives/2014/12/">December 2014</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -641,6 +704,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/myfreebook/2015/02/17/babel/">バベりバベられた日</a>
+          </li>
         
           <li>
             <a href="/myfreebook/2015/02/02/jspm/">jspmを使ってみる</a>
@@ -656,10 +723,6 @@
         
           <li>
             <a href="/myfreebook/2014/12/25/20141225/">最近気になったOSS UIまとめ</a>
-          </li>
-        
-          <li>
-            <a href="/myfreebook/2014/12/08/use-hexo/">hexoを使ってみる</a>
           </li>
         
       </ul>
